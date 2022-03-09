@@ -1,6 +1,6 @@
 # APP-Mòbil
 
-> Repositocio con la parte de la App mobil donde se podran acceder a los cursos y consultar toda la información
+> Repositorio con la parte de la App mobil donde se podran acceder a los cursos y consultar toda la información
 
 ###### TODO
 
