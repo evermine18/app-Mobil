@@ -27,26 +27,21 @@ function loadArticle(data,item) {
  
 function onDeviceReady() {
     // Cordova is now initialized. Have fun!
- 
-    console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
 
-    $("#update").click(function(){
-      //Buidem la llista abans de actualitzar amb el nou contingur
-      $("#llistaPrincipal").empty();
-      $.ajax({
-        method: "GET",
-        url: "https://api.spaceflightnewsapi.net/v3/articles?_limit=5",
-        dataType: "json",
-      }).done(function (data) {
-        for(let item in data) {
-          let newElement = $('<a href="#" class="collection-item">'+data[item]["title"]+'</a>');
-          console.log(data[item]["title"]);
-          
-          newElement.click(loadArticle(data,item));
-          $("#llistaPrincipal").append(newElement);
-        };
-      }).fail(function () {
-        alert("ERROR");
-      });
+    console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
+    //Funcionalidad login
+    let userList = {"user":"test123","user2":"test"};
+    $("#loginButton").click(function(){
+      inputUser=$("#user").val();
+      inputPass=$("#password").val();
+      if(inputUser in userList){
+        if(userList[inputUser]==inputPass){
+          alert("Dades correctes!!");
+        }else{
+          alert("Error: Les dades introduides no son correctes");
+        }
+      }else{
+        alert("Error: Les dades introduides no son correctes");
+      }
       });
 }
